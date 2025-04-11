@@ -62,7 +62,8 @@ if st.button("Iniciar Simulação"):
     cor = cores[material]
     n_frames = len(delta_L)
 
-    st.write("\n")
+    plot_area = st.empty()
+
     for i in range(1, n_frames + 1):
         fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(14, 5), gridspec_kw={'width_ratios': [3, 1]})
 
@@ -118,6 +119,5 @@ if st.button("Iniciar Simulação"):
         legenda_plast = mpatches.Patch(color='orangered', label='Zona Plástica')
         ax2.legend(handles=[legenda_elast, legenda_esc, legenda_plast], loc='upper left', fontsize=9)
 
-        st.pyplot(fig)
+        plot_area.pyplot(fig)
         plt.close(fig)
-        st.empty()
