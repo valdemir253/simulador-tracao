@@ -25,8 +25,8 @@ def curva_realista(material):
     deform_max = props["deform_max"]
     epsilon_elastico = sigma_y / E
     epsilon_plato = epsilon_elastico + props["escoamento_duracao"]
-    n_fino = 150
-    n_grosso = 50
+    n_fino = 40
+    n_grosso = 40
 
     eps_fino = np.linspace(0, epsilon_plato, n_fino)
     eps_grosso = np.linspace(epsilon_plato, deform_max, n_grosso + 1)[1:]
@@ -61,7 +61,7 @@ if st.button("Iniciar Simulação"):
     grafico, ax1 = plt.subplots(figsize=(8, 5))
     ax1.plot(delta_L, tensao, color=cor)
     ax1.set_title(f"Ensaio de Tração - {material}")
-    ax1.set_xlabel("Deformação Real ∆L (mm)\nwww.mestre-federal.com - Prof. Valdemir - IFSP - Campus Guarulhos")
+    ax1.set_xlabel("Deformação Real ∆L (mm)\n------------------------\nwww.mestre-federal.com - Prof. Valdemir - IFSP - Campus Guarulhos")
     ax1.set_ylabel("Tensão (MPa)")
     ax1.set_xlim(0, deltaL_ruptura * 1.05)
     ax1.set_ylim(0, tensao_ruptura * 1.2)
