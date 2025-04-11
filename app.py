@@ -70,7 +70,7 @@ if st.button("Iniciar Simulação"):
         # Gráfico
         ax1.plot(delta_L[:i], tensao[:i], color=cor)
         ax1.set_title(f"Ensaio de Tração - {material} (∆L × Tensão)")
-        ax1.set_xlabel("Deformação Real ∆L (mm)\nwww.mestre-federal.com\nProf. Valdemir - IFSP - Campus Guarulhos")
+        ax1.set_xlabel("Deformação Real ∆L (mm)\n------------------------\nwww.mestre-federal.com\nProf. Valdemir - IFSP - Campus Guarulhos")
         ax1.set_ylabel("Tensão (MPa)")
         ax1.set_xlim(0, deltaL_ruptura * 1.05)
         ax1.set_ylim(0, tensao_ruptura * 1.2)
